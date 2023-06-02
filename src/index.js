@@ -9,7 +9,7 @@ const getRes = (res) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(res);
-    }, 2200);
+    }, 1000);
   });
 };
 
@@ -24,6 +24,6 @@ mockList.forEach((item) => {
 
 app.use(router.routes());
 
-app.listen(3000, () => {
-  console.log("http://localhost:3000/");
+app.listen(3001, () => {
+  console.log("http://localhost:3001/");
 });

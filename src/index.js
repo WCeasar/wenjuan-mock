@@ -9,7 +9,7 @@ const getRes = (res) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(res);
-    }, 1000);
+    }, 500);
   });
 };
 
@@ -17,7 +17,7 @@ mockList.forEach((item) => {
   const { url, method, response } = item;
 
   router[method](url, async (ctx) => {
-    const res = await getRes(response());
+    const res = await getRes(response(ctx));
     ctx.body = res;
   });
 });

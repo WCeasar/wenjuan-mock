@@ -39,12 +39,18 @@ module.exports = [
   {
     url: "/api/question",
     method: "get",
-    response() {
+    response(ctx) {
+      console.log(ctx.query);
+      let { isStar = false, isDeleted = false, page, pageSize } = ctx.query;
+      isStar = isStar === "true" ? true : false;
+      isDeleted = isDeleted === "true" ? true : false;
+      const len = pageSize;
+
       return {
         errno: 0,
         data: {
           total: 100,
-          list: getQuestionList(),
+          list: getQuestionList({ isStar, isDeleted, len }),
         },
       };
     },

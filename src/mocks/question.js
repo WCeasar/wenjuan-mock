@@ -55,4 +55,29 @@ module.exports = [
       };
     },
   },
+  // 查询问卷列表
+  {
+    url: "/api/question/:id",
+    method: "patch",
+    response(ctx) {
+      console.log(ctx.request.body);
+      return {
+        errno: 0,
+        data: ctx.request.body,
+      };
+    },
+  },
+  // 查询问卷列表
+  {
+    url: "/api/question/duplicate/:id",
+    method: "post",
+    response(ctx) {
+      return {
+        errno: 0,
+        data: {
+          id: Random.id(),
+        },
+      };
+    },
+  },
 ];

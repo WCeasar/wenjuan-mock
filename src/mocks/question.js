@@ -80,4 +80,14 @@ module.exports = [
       };
     },
   },
+  {
+    url: "/api/question",
+    method: "delete",
+    response(ctx) {
+      return {
+        errno: 0,
+        data: ctx.request.body,
+      };
+    },
+  },
 ];

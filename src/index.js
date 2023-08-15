@@ -12,7 +12,7 @@ const getRes = (res) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(res);
-    }, 500);
+    }, 100);
   });
 };
 
